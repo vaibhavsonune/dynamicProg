@@ -1,3 +1,12 @@
+/*
+	Problem Description 
+	Write a function bestSum(targetSum , numbers ) that takes in targetSum and an array of numbers as arguments.
+	
+	The function should retrun an arry containing the shortest combination of numbers that can add up to extacly the targetSum.
+	
+	If there is a tie for the shortest combination, you may retrun any one of the shortest.
+*/
+
 const baseSum = ( targetSum, numbers, memo = {} ) => {
 //basecase
 if(targetSum === 0) return [];
