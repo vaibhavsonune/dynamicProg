@@ -7,7 +7,7 @@
 	If there is a tie for the shortest combination, you may retrun any one of the shortest.
 */
 
-const baseSum = ( targetSum, numbers, memo = {} ) => {
+const bestSum = ( targetSum, numbers, memo = {} ) => {
 //basecase
 if(targetSum === 0) return [];
 if(targetSum < 0) return null;
@@ -16,7 +16,7 @@ let shortestComb = null;
 
 for(let num of numbers){
 		const remainder =  targetSum - num;
-    const remainderComb = baseSum(remainder, numbers, memo);
+    const remainderComb = bestSum(remainder, numbers, memo);
    
 	if(remainderComb !== null ){
   	const comb =  [...remainderComb, num];
@@ -30,4 +30,4 @@ for(let num of numbers){
 return shortestComb;
 };
 
-console.log(baseSum(1000, [5,3,4,7,25]));
+console.log(bestSum(1000, [5,3,4,7,25]));
